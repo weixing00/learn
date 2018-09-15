@@ -2,6 +2,7 @@ import {getImgList} from '../../api'
 
 let state = {
 	imgList:[],
+	id:0
 }
 
 let mutations = {
@@ -28,13 +29,14 @@ let actions = {
 	getimgID({commit},payload){
 		// console.log(payload)
 		getImgList(payload).then(body=>{
-			console.log('...........................',body)
+			//console.log('...........................',body)
 			if(body.code == 1){
 				commit('initState',body.data)
 			}else{
 				alert(body.msg)
 			}			
 		})
+		state.id = payload
 	}
 }
 

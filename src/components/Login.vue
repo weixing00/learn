@@ -73,6 +73,7 @@
      export default {
         methods: {
             login(){
+                 _hmt.push(['_trackEvent', '点击统计', 'tap', '点击了登陆按钮']);
                 let username = this.$refs.username.value,
                     password = this.$refs.password.value;
                 if (username == '1602E' && password == '1602E'){
